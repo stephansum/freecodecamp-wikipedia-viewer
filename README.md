@@ -2,17 +2,17 @@
 
 ### Features
 
-SASS Transpilation
-JS Bundling
-JS + CSS Injection
-JS Sourcemaps
-Webpack Dev Server with Live-Reload
+- SASS Transpilation
+- JS Bundling
+- JS + CSS Injection
+- JS Sourcemaps
+- Webpack Dev Server with Live-Reload
 
 ### Todo
 
-Linting
-Copy Ressources to Dist (Images etc)
-Deploy Script
+- Linting
+- Copy Ressources to Dist (Images etc)
+- Deploy Script
 
 
 
