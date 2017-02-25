@@ -1,0 +1,10 @@
+@import "../node_modules/normalize.css/normalize.css";
+@import "../node_modules/boilerplate-styles/styles/boilerplate.scss";
+
+$darkgrey: #222;
+
+h1 {
+  padding: 40px;
+  background: $darkgrey;
+  color: #FEFEFE;
+}
