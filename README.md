@@ -21,8 +21,10 @@ a lightweight template for simple frontend sites
 - Include polyfill and modernizr to bundle
 
 
-https://webpack.js.org/guides/
-https://webpack.js.org/configuration/
+### Ressources
 
-http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/
-https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/
+https://webpack.js.org/guides/  
+https://webpack.js.org/configuration/  
+
+http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/  
+https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/  
