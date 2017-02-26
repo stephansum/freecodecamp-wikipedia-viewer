@@ -4,11 +4,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var WriteFilePlugin = require('write-file-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
-    devtool: 'source-map',
+    // devtool: 'source-map', // not working
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -42,9 +42,16 @@ module.exports = {
         // copy files around
         new WriteFilePlugin(),
         // Generate an external css file with a hash in the filename (to avoid FOUC)
-        // new ExtractTextPlugin('[name].[contenthash].css'),
+        new ExtractTextPlugin('[name].[contenthash].css'),
         // Minify JS
         new webpack.optimize.UglifyJsPlugin(),
+        // Minify CSS
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { discardComments: {removeAll: true } },
+            canPrint: true
+        })
     ],
     // Configuration options for the module loaders (aka babel transpiler, sass transpiler etc)
     module: {
@@ -57,20 +64,13 @@ module.exports = {
                 ]
             },
             {
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-            ]}
-            // {
-            //     test: /\.scss$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: 'style-loader',
-            //         //resolve-url-loader may be chained before sass-loader if necessary
-            //         use: ['css-loader', 'sass-loader']
-            //     })
-            // }
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    //resolve-url-loader may be chained before sass-loader if necessary
+                    use: ['css-loader', 'sass-loader'] // sourceMaps should work by appending "?sourceMap" but it dont
+                })
+            }
         ]
     }
 };
