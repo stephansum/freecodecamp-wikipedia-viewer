@@ -24,3 +24,4 @@ https://webpack.js.org/guides/
 https://webpack.js.org/configuration/  
 http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/  
 https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/  
+https://github.com/NMFR/optimize-css-assets-webpack-plugin  
