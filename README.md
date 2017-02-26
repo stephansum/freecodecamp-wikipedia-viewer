@@ -8,7 +8,7 @@ a lightweight template for simple frontend sites
 - JS bundling (webpack core functionality)
 - SASS transpilation (sass-loader transforms Sass into CSS. css-loader parses the CSS into JavaScript and resolves any dependencies. style-loader outputs our CSS into a style tag in the document.)
 - JS + CSS injection (html-webpack-plugin)
-- JS sourcemaps ()
+- JS sourcemaps
 - webpack-dev-server with live-reload
 
 ### Todo
