@@ -15,8 +15,8 @@ a lightweight template for simple frontend sites
 
 ### todo
 
-- Linting
-
+- linting
+- bugfix: flash of unstyled content tue to css injection; maybe use ExtractTextWebpackPlugin  in production
 
 ### other ressources
 
