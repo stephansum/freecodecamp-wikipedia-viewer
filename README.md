@@ -14,8 +14,6 @@ a lightweight template for simple frontend sites
 ### Todo
 
 - Linting
-- Copy ressources to /dist (images etc)
-- Deployment script (deploy:surge, deploy:localtunnel, deploy:ftp, deploy:github-pages)
 - Inline-CSS causes flash of unstyled content problem -> dedicated css files ?
 - Better sourcemaps for production build?
 - Include polyfill and modernizr to bundle
@@ -28,3 +26,6 @@ https://webpack.js.org/configuration/
 
 http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/  
 https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/  
+
+https://github.com/kevlened/copy-webpack-plugin (selects files that need to be copied from src to dist)
+https://github.com/gajus/write-file-webpack-plugin (needed to force webpack-dev-server to copy watched files to dist folder instead from only serving them up from memory. files will still get served from memory but also copied)  
