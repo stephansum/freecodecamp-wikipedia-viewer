@@ -1,5 +1,7 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -11,9 +13,17 @@ module.exports = {
     plugins: [
         // Create HTML file that includes reference to bundled JS.
         new HtmlWebpackPlugin({
-        template: 'src/index.html',
-        inject: true
-        })
+            template: 'src/index.html',
+            inject: true
+        }),
+        new CopyWebpackPlugin([
+            { context: 'src', from: 'images/**/*', to: '' },
+            ], 
+            {
+                copyUnmodified: false
+            }
+        ),
+        new WriteFilePlugin()
     ],
     // Configuration options for the module loaders (aka babel transpiler, sass transpiler etc)
     module: {
