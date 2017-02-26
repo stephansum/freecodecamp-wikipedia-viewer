@@ -44,7 +44,20 @@ module.exports = {
                 'style-loader',
                 'css-loader',
                 'sass-loader'
-            ]}
+            ]},
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+            ]},
+            {
+                test: /\.(jpg|png|gif)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 25000
+                },
+            }
         ]
     },
     // Configuration options for the webpack-dev-server
