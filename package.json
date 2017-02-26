@@ -9,11 +9,12 @@
     "webserver": "webpack-dev-server --open",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all --parallel clean-dist",
-    "prebuild:production": "npm-run-all --parallel clean-dist",
-    "build": "webpack",
-    "build:production": "webpack -p",
+    "prebuild:dev": "npm run prebuild",
+    "prebuild:prod": "npm run prebuild",
+    "build:dev": "webpack --env=dev --progress --profile --colors --config webpack.config.dev.js",
+    "build:prod": "webpack --env=prod --progress --profile --colors --config webpack.config.prod.js",
     "localtunnel": "lt --port 3000",
-    "predeploy:github": "npm run build:production",
+    "predeploy:github": "npm run build:prod",
     "deploy:github": "gh-pages -d dist"
   },
   "repository": {

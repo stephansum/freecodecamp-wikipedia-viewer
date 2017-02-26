@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var WriteFilePlugin = require('write-file-webpack-plugin');
@@ -16,6 +17,7 @@ module.exports = {
             template: 'src/index.html',
             inject: true
         }),
+        // select files to copy around
         new CopyWebpackPlugin([
             { context: 'src', from: 'images/**/*', to: '' },
             ], 
@@ -23,6 +25,7 @@ module.exports = {
                 copyUnmodified: false
             }
         ),
+        // copy files around
         new WriteFilePlugin()
     ],
     // Configuration options for the module loaders (aka babel transpiler, sass transpiler etc)
