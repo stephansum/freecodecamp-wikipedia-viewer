@@ -3,29 +3,24 @@
 a lightweight template for simple frontend sites
 
 
-### Features
+### features
 
-- JS bundling (webpack core functionality)
-- SASS transpilation (sass-loader transforms Sass into CSS. css-loader parses the CSS into JavaScript and resolves any dependencies. style-loader outputs our CSS into a style tag in the document.)
+- JS bundling provided by the webpack core
+- SASS transpilation: sass-loader transforms SASS into CSS. css-loader parses the CSS into JS and resolves any dependencies. style-loader outputs our CSS into a style tag in the document.
 - JS + CSS injection (html-webpack-plugin)
-- JS sourcemaps
-- webpack-dev-server with live-reload
+- JS sourcemaps (provided by the "devtool" property)
+- "webpack-dev-server" provides live-reloading
+- "copy-webpack-plugin" selects files that need to be copied from src to dist (https://github.com/kevlened/copy-webpack-plugin)
+- "write-file-webpack-plugin" is needed to force webpack-dev-server to copy watched files to dist folder instead from only serving them up from memory. files will still get served from memory but also copied. (https://github.com/gajus/write-file-webpack-plugin)
 
-### Todo
+### todo
 
 - Linting
-- Inline-CSS causes flash of unstyled content problem -> dedicated css files ?
-- Better sourcemaps for production build?
-- Include polyfill and modernizr to bundle
 
 
-### Ressources
+### other ressources
 
 https://webpack.js.org/guides/  
 https://webpack.js.org/configuration/  
-
 http://javascriptplayground.com/blog/2016/10/moving-to-webpack-2/  
 https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/  
-
-https://github.com/kevlened/copy-webpack-plugin (selects files that need to be copied from src to dist)
-https://github.com/gajus/write-file-webpack-plugin (needed to force webpack-dev-server to copy watched files to dist folder instead from only serving them up from memory. files will still get served from memory but also copied)  
