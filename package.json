@@ -9,6 +9,7 @@
     "webserver": "webpack-dev-server --open",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all --parallel clean-dist",
+    "prebuild:production": "npm-run-all --parallel clean-dist",
     "build": "webpack",
     "build:production": "webpack -p",
     "localtunnel": "lt --port 3000",
