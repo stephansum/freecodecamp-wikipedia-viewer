@@ -12,6 +12,7 @@ a lightweight template for simple frontend sites
 - "webpack-dev-server" provides live-reloading
 - "copy-webpack-plugin" selects files that need to be copied from src to dist (https://github.com/kevlened/copy-webpack-plugin)
 - "write-file-webpack-plugin" is needed to force webpack-dev-server to copy watched files to dist folder instead from only serving them up from memory. files will still get served from memory but also copied. (https://github.com/gajus/write-file-webpack-plugin)
+- "optimize-css-assets-webpack-plugin" minifies css. this module is necessary as webpack isnt able to minify css anymore, when we dont inject css via js but instead use the "extract-text-webpack-plugin"
 
 ### todo
 
