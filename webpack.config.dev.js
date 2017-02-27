@@ -52,7 +52,7 @@ module.exports = {
                     'css-loader'
             ]},
             {
-                test: /\.(jpg|png|gif)$/,
+                test: /\.(jpg|png|gif|ttf|eot|svg|woff|woff2)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 25000
