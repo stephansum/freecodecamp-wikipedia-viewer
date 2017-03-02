@@ -69,14 +69,15 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     //resolve-url-loader may be chained before sass-loader if necessary
-                    use: ['css-loader', 'sass-loader'] // sourceMaps should work by appending "?sourceMap" but it dont
+                    use: ['css-loader', 'postcss-loader', 'sass-loader'] // sourceMaps should work by appending "?sourceMap" but it dont
                 })
             },
             {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'postcss-loader'
             ]},
             {
                 test: /\.(jpg|png|gif|ttf|eot|svg|woff|woff2)$/,
