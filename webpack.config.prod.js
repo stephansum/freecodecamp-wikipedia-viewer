@@ -78,7 +78,7 @@ module.exports = {
                     fallback: 'style-loader',
                     use: ['css-loader', 'postcss-loader']
                 })
-            ]},
+            },
             {
                 test: /\.(jpg|png|gif|ttf|eot|svg|woff|woff2)$/,
                 loader: 'url-loader',
