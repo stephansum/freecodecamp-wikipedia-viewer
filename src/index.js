@@ -5,7 +5,6 @@ import $ from "jquery";
 window.$ = window.jQuery = $;  // make jQuery globally available
 
 $(() => {
-    // $("#search-input").val("goethe");
     setupClickHandler();
 });
 
@@ -41,13 +40,6 @@ function displayResults(results) {
         let extract = article.extract;
         let articleUrl = articleUrlPrefix + pageId;
 
-        // $("#search-results").append(`
-        //     <div class='article'>
-        //         <h3>${title}</h3>
-        //         <p>${extract}</p>
-        //     </div>
-        // `);
-
         var newArticle = $(`
             <div class='article'>
                 <h3>${title}</h3>
@@ -58,10 +50,5 @@ function displayResults(results) {
 
         newArticle.click(() => { window.open(articleUrl, "_blank") });
 
-        newArticle.mouseenter(
-            (event) => { $(event.target).children(".hover-block").animate( { "opacity": "100" }, 3000); });
-        newArticle.mouseleave(    
-            (event) => { $(event.target).children(".hover-block").stop().css("opacity", "0"); }
-        );
     }
 }

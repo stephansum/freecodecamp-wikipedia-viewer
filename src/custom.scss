@@ -50,17 +50,12 @@ body {
     }
 
     cursor: pointer;
+    border-right: 10px solid transparent;
 
     position: relative;
 
-    .hover-block {
-        width: 10px;
-        height: 100%;
-        background-color: $orange;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: -20px;
+    &:hover {
+        border-right: 10px solid $orange;
     }
 }
 
