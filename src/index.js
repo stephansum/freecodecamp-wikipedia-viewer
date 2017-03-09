@@ -10,14 +10,24 @@ $(() => {
 
 function setupClickHandler() {
     $("#search-button").click(search);
+    $("#random-button").click(() => { window.open("https://en.wikipedia.org/wiki/Special:Random", "_blank"); });
 }
 
 function search() {
+    
     let searchTerm = $("#search-input").val();
-    getSearchResults(searchTerm).done(function(data) {
-        let results = data.query.pages;
-        displayResults(results);
-    })
+
+    if (searchTerm) {
+        getSearchResults(searchTerm).then(function(data) {
+            if (data.query) {
+                let results = data.query.pages;
+                displayResults(results);
+            }
+            else {
+                displayNoResultsFound();
+            }
+        });
+    }
     
 }
 
@@ -26,8 +36,14 @@ function getSearchResults(searchTerm) {
     return $.get(wikipediaApiEndpoint, function() {}, "jsonp");   
 }
 
+function displayNoResultsFound() {
+    $("#search-results").empty();
+    $("#search-results").append("<p>No articles found :-(</p>")
+}
+
 function displayResults(results) {
-    
+
+    $("#title").css("padding-top", "50px");
     $("#search-results").empty();
     let articleUrlPrefix = "https://en.wikipedia.org/?curid=";
 
