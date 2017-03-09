@@ -4,8 +4,65 @@
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
+    background-image: url("./images/bg.png");
+    background-repeat: repeat;
 }
 
+#container {
+    // height: 100vh;
+    // justify-content: center;
+    // align-items: center;
+    // display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    // flex-wrap: wrap;
+}    
+
+#search-box {
+    height: 30px;
+
+    #search-button {
+        color: $greyish-white;
+        background-color: $light-black;
+        border: 0;
+        height: 100%;
+
+        &:hover {
+            background-color: $orange;
+        }
+    }
+
+    #search-input {
+        border: 0;
+        height: 100%;
+    }
+}
+
+
+
+.article {
+    background-color: $greyish-white;
+    padding: 1em;
+    margin-bottom: 1em;
+
+    h3 {
+        color: $blue;
+    }
+
+    cursor: pointer;
+
+    position: relative;
+
+    .hover-block {
+        width: 10px;
+        height: 100%;
+        background-color: $orange;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: -20px;
+    }
+}
 
 
 
